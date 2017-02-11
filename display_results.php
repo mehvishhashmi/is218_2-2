@@ -14,6 +14,18 @@
 
 
 
+
+
+ // validate years
+     } else if ( $years === FALSE ) {
+       $error_message = 'Years must be a valid whole number.';
+     } else if ( $years <= 0 ) {
+       $error_message = 'Years must be greater than zero.';			     } else if ( $years > 30 ) {
+       $error_message = 'Years must be less than 31.';
+
+
+
+
  // set error message to empty string if no invalid entries
      } else {
              $error_message = ''; }
