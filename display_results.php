@@ -5,7 +5,20 @@
      $interest_rate = filter_input(INPUT_POST, 'interest_rate',FILTER_VALIDATE_FLOAT);
      $years = filter_input(INPUT_POST, 'years', FILTER_VALIDATE_INT);
 
-				        
+// validate investment
+ if ($investment === FALSE ) {
+         $error_message = 'Investment must be a valid number.'; 
+ } else if ( $investment <= 0 ) {
+         $error_message = 'Investment must be greater than zero.'; 
+
+
+
+
+ // set error message to empty string if no invalid entries
+     } else {
+             $error_message = ''; }
+
+
 // if an error message exists, go to the index page
 	if ($error_message != '') {
 	       include('index.php');
